@@ -1,6 +1,4 @@
-# Digital Open Card — IT Specialist Portfolio
-
-Адаптивный одностраничный сайт-визитка для IT-специалиста с эффектами Glassmorphism + Neon.
+# Адаптивный одностраничный сайт-визитка для IT-специалиста с эффектами Glassmorphism + Neon.
 
 ## Стек технологий
 
