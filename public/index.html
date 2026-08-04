@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Open Card — Алексей Кодеров</title>
+    <meta name="description" content="Full Stack Developer | Backend Architect & Database Specialist">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-container">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-core"></div>
+        </div>
+        <div class="preloader-text">
+            <span class="preloader-code">&lt;/&gt;</span>
+            <span class="preloader-label">Loading Profile...</span>
+        </div>
+        <div class="preloader-progress">
+            <div class="preloader-progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <!-- Фоновые элементы -->
+    <div class="bg-grid" id="bgGrid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Навигация -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-bracket">&lt;</span>
+                <span class="nav-logo-text">AlexDev</span>
+                <span class="nav-logo-bracket">/&gt;</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+                <li><a href="#about" class="nav-link">Обо мне</a></li>
+                <li><a href="#technologies" class="nav-link">Технологии</a></li>
+                <li><a href="#projects" class="nav-link">Проекты</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Главный экран -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge" data-animate="fade-up">
+                    <span class="badge-dot"></span>
+                    <span>Available for hire</span>
+                </div>
+                
+                <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                    <span class="title-line">Full Stack</span>
+                    <span class="title-line title-line-accent">Developer</span>
+                </h1>
+                
+                <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                    Backend Architect & Database Specialist
+                </p>
+                
+                <p class="hero-description" data-animate="fade-up" data-delay="300">
+                    Проектирую масштабируемые системы, REST API и оптимизирую базы данных. 
+                    Превращаю сложные задачи в элегантные решения.
+                </p>
+                
+                <div class="hero-actions" data-animate="fade-up" data-delay="400">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Связаться</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <span>Проекты</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats" data-animate="fade-up" data-delay="500">
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="5">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">лет опыта</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="47">0</span>
+                        <span class="stat-label">проектов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="1200">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">API endpoints</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-animate="fade-left" data-delay="200">
+                <div class="avatar-container">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-glow"></div>
+                    <div class="avatar-wrapper">
+                        <img 
+                            src="" 
+                            alt="Profile Photo" 
+                            class="avatar-image" 
+                            id="avatarImage"
+                        >
+                        <div class="avatar-placeholder" id="avatarPlaceholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <label for="avatarInput" class="avatar-upload" title="Загрузить фото">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </label>
+                    <input 
+                        type="file" 
+                        id="avatarInput" 
+                        accept="image/*" 
+                        class="avatar-input"
+                    >
+                </div>
+
+                <!-- Декоративные технологии вокруг аватара -->
+                <div class="tech-orbit tech-orbit-1">
+                    <span class="tech-badge">PostgreSQL</span>
+                </div>
+                <div class="tech-orbit tech-orbit-2">
+                    <span class="tech-badge">Node.js</span>
+                </div>
+                <div class="tech-orbit tech-orbit-3">
+                    <span class="tech-badge">MongoDB</span>
+                </div>
+                <div class="tech-orbit tech-orbit-4">
+                    <span class="tech-badge">REST API</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Обо мне -->
+    <section class="about section" id="about">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Обо мне</h2>
+                <p class="section-subtitle">Backend-first разработчик с фокусом на данные</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card glass-card" data-animate="fade-right">
+                    <div class="about-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                        </svg>
+                    </div>
+                    <h3>Базы Данных</h3>
+                    <p>Проектирование схем, оптимизация запросов, репликация и шардирование. PostgreSQL и MongoDB на экспертном уровне.</p>
+                </div>
+
+                <div class="about-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="about-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>REST API</h3>
+                    <p>Архитектура API, проектирование endpoints, документация OpenAPI/Swagger, версионирование и rate limiting.</p>
+                </div>
+
+                <div class="about-card glass-card" data-animate="fade-up" data-delay="200">
+                    <div class="about-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>System Design</h3>
+                    <p>Проектирование распределенных систем, микросервисная архитектура, очереди сообщений, кэширование.</p>
+                </div>
+            </div>
+
+            <div class="about-code" data-animate="fade-up">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="code-filename">developer.json</span>
+                </div>
+                <pre class="code-body"><code>{
+  "name": "Алексей Кодеров",
+  "role": "Full Stack Developer",
+  "focus": ["Backend", "Databases", "API Design"],
+  "databases": {
+    "relational": "PostgreSQL",
+    "document": "MongoDB",
+    "cache": "Redis"
+  },
+  "backend": {
+    "runtime": "Node.js",
+    "frameworks": ["Express", "NestJS"],
+    "protocols": ["REST", "GraphQL", "WebSocket"]
+  },
+  "status": "available_for_hire"
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Технологии -->
+    <section class="technologies section" id="technologies">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Технологии</h2>
+                <p class="section-subtitle">Стек и инструменты</p>
+            </div>
+
+            <div class="tech-filter" data-animate="fade-up">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="Database">Базы данных</button>
+                <button class="filter-btn" data-filter="Backend">Бэкенд</button>
+                <button class="filter-btn" data-filter="DevOps">DevOps</button>
+            </div>
+
+            <div class="tech-grid" id="techGrid">
+                <!-- Генерируется через JS -->
+            </div>
+
+            <div class="tech-counter" data-animate="fade-up">
+                <div class="counter-container">
+                    <div class="counter-item">
+                        <div class="counter-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="counter-track" cx="50" cy="50" r="45"/>
+                                <circle class="counter-progress" cx="50" cy="50" r="45" id="counterDb" data-target="95"/>
+                            </svg>
+                            <div class="counter-value">
+                                <span class="counter-number" data-count="95">0</span>
+                                <span class="counter-percent">%</span>
+                            </div>
+                        </div>
+                        <span class="counter-label">PostgreSQL</span>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="counter-track" cx="50" cy="50" r="45"/>
+                                <circle class="counter-progress" cx="50" cy="50" r="45" id="counterNode" data-target="93"/>
+                            </svg>
+                            <div class="counter-value">
+                                <span class="counter-number" data-count="93">0</span>
+                                <span class="counter-percent">%</span>
+                            </div>
+                        </div>
+                        <span class="counter-label">Node.js</span>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="counter-track" cx="50" cy="50" r="45"/>
+                                <circle class="counter-progress" cx="50" cy="50" r="45" id="counterMongo" data-target="90"/>
+                            </svg>
+                            <div class="counter-value">
+                                <span class="counter-number" data-count="90">0</span>
+                                <span class="counter-percent">%</span>
+                            </div>
+                        </div>
+                        <span class="counter-label">MongoDB</span>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="counter-track" cx="50" cy="50" r="45"/>
+                                <circle class="counter-progress" cx="50" cy="50" r="45" id="counterApi" data-target="92"/>
+                            </svg>
+                            <div class="counter-value">
+                                <span class="counter-number" data-count="92">0</span>
+                                <span class="counter-percent">%</span>
+                            </div>
+                        </div>
+                        <span class="counter-label">REST API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Проекты -->
+    <section class="projects section" id="projects">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Проекты</h2>
+                <p class="section-subtitle">Избранные работы</p>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Генерируется через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact section" id="contact">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Контакты</h2>
+                <p class="section-subtitle">Давайте работать вместе</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="fade-right">
+                    <div class="contact-card glass-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:alex@devmaster.ru" class="contact-value">alex@devmaster.ru</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="contact-label">Локация</span>
+                                <span class="contact-value">Москва, Россия</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="contact-label">GitHub</span>
+                                <a href="#" class="contact-value">github.com/alexdev</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-animate="fade-left">
+                    <form class="contact-form glass-card" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Имя</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" required placeholder=" "></textarea>
+                            <label for="message">Сообщение</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Отправить</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="nav-logo-bracket">&lt;</span>
+                <span>AlexDev</span>
+                <span class="nav-logo-bracket">/&gt;</span>
+            </div>
+            <p class="footer-copy">© 2026 Digital Open Card. Built with ❤️ and ☕</p>
+            <div class="footer-tech">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">PostgreSQL</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "digital-open-card",
+  "version": "1.0.0",
+  "description": "Digital Open Card - адаптивный сайт-визитка IT-специалиста",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "digital-card",
+    "portfolio",
+    "glassmorphism",
+    "neon",
+    "express"
+  ],
+  "author": "IT Specialist",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.2"
+  }
+}

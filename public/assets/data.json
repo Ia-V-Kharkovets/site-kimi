@@ -1,0 +1,110 @@
+{
+  "profile": {
+    "name": "Алексей Кодеров",
+    "title": "Full Stack Developer",
+    "subtitle": "Backend Architect & Database Specialist",
+    "about": "Специалист с 5+ годами опыта в разработке высоконагруженных систем. Эксперт в проектировании REST API, работе с реляционными и NoSQL базами данных. Создаю масштабируемые решения от идеи до production.",
+    "location": "Москва, Россия",
+    "email": "alex@devmaster.ru",
+    "github": "github.com/alexdev",
+    "linkedin": "linkedin.com/in/alexdev"
+  },
+  "technologies": [
+    {
+      "name": "PostgreSQL",
+      "category": "Database",
+      "level": 95,
+      "icon": "🐘",
+      "description": "Продвинутые запросы, индексация, репликация"
+    },
+    {
+      "name": "MongoDB",
+      "category": "Database",
+      "level": 90,
+      "icon": "🍃",
+      "description": "Агрегации, шардирование, оптимизация"
+    },
+    {
+      "name": "Node.js",
+      "category": "Backend",
+      "level": 93,
+      "icon": "🟢",
+      "description": "Express, NestJS, микросервисы"
+    },
+    {
+      "name": "Express",
+      "category": "Backend",
+      "level": 92,
+      "icon": "🚀",
+      "description": "REST API, middleware, роутинг"
+    },
+    {
+      "name": "Redis",
+      "category": "Database",
+      "level": 85,
+      "icon": "🔴",
+      "description": "Кэширование, pub/sub, очереди"
+    },
+    {
+      "name": "Docker",
+      "category": "DevOps",
+      "level": 88,
+      "icon": "🐳",
+      "description": "Контейнеризация, docker-compose"
+    },
+    {
+      "name": "React",
+      "category": "Frontend",
+      "level": 82,
+      "icon": "⚛️",
+      "description": "Hooks, Context, оптимизация"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Language",
+      "level": 90,
+      "icon": "📘",
+      "description": "Типизация, generics, утилиты"
+    },
+    {
+      "name": "GraphQL",
+      "category": "API",
+      "level": 78,
+      "icon": "◈",
+      "description": "Queries, mutations, subscriptions"
+    },
+    {
+      "name": "AWS",
+      "category": "Cloud",
+      "level": 80,
+      "icon": "☁️",
+      "description": "EC2, S3, Lambda, RDS"
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce API",
+      "description": "Высоконагруженное REST API для маркетплейса. 100k+ RPS.",
+      "stack": ["Node.js", "PostgreSQL", "Redis", "Docker"],
+      "link": "#"
+    },
+    {
+      "title": "Data Pipeline",
+      "description": "ETL система обработки данных в real-time.",
+      "stack": ["MongoDB", "Node.js", "Kafka"],
+      "link": "#"
+    },
+    {
+      "title": "Auth Microservice",
+      "description": "JWT/OAuth2 сервис аутентификации.",
+      "stack": ["Express", "PostgreSQL", "Redis"],
+      "link": "#"
+    }
+  ],
+  "stats": {
+    "yearsExperience": 5,
+    "projectsCompleted": 47,
+    "apiEndpointsBuilt": 1200,
+    "databasesOptimized": 35
+  }
+}
